@@ -25,11 +25,14 @@ const Nav = ({ libraryStatus, setLibraryStatus }) => {
           <GlobalStyles />
           <Toggle theme={theme} toggleTheme={toggleTheme} />
         </>
+        <button
+          id="library-status"
+          onClick={() => setLibraryStatus(!libraryStatus)}
+        >
+          Library
+          <FontAwesomeIcon icon={faMusic} />
+        </button>
       </ThemeProvider>
-      <button onClick={() => setLibraryStatus(!libraryStatus)}>
-        Library
-        <FontAwesomeIcon icon={faMusic} />
-      </button>
     </nav>
   );
 };
