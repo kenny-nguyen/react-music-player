@@ -20,16 +20,16 @@ const Nav = ({ libraryStatus, setLibraryStatus }) => {
   return (
     <nav>
       <h1>Tunes</h1>
-      <button onClick={() => setLibraryStatus(!libraryStatus)}>
-        Library
-        <FontAwesomeIcon icon={faMusic} />
-      </button>
       <ThemeProvider theme={themeMode}>
         <>
           <GlobalStyles />
           <Toggle theme={theme} toggleTheme={toggleTheme} />
         </>
       </ThemeProvider>
+      <button onClick={() => setLibraryStatus(!libraryStatus)}>
+        Library
+        <FontAwesomeIcon icon={faMusic} />
+      </button>
     </nav>
   );
 };

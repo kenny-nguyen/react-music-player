@@ -21,9 +21,10 @@ export const GlobalStyles = createGlobalStyle`
   }
   footer {
     position: absolute;
-    bottom: 5%;
+    bottom: -10rem;
     left: 50%;
     transform: translateX(-50%);
+    padding-bottom: 2rem;
   }
   small {
     display: block;
