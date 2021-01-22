@@ -31,8 +31,31 @@ export const GlobalStyles = createGlobalStyle`
   }
   button {
     display: block;
+    color: ${({ theme }) => theme.text};
+    border: 2px solid ${({ theme }) => !theme.toggleBorder} !important;
   }
   a {
     color: ${({ theme }) => theme.text};
+  }
+
+  h1, h2, h3, h4, h5, h6{
+    color: ${({ theme }) => theme.text};
+  }
+
+  .library{
+    background: ${({ theme }) => theme.body};
+  }
+
+  // .library-songs{
+  //   background: ${({ theme }) => theme.body};
+  // }
+
+  .selected h3{
+    color: #363537;
+    background: ${({ theme }) => (!theme).body};
+  }
+
+  .selected h4{
+    color: #646464;
   }
 `;

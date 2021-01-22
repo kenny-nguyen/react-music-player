@@ -47,13 +47,6 @@ function App() {
     }
   };
 
-  const [theme, toggleTheme, componentMounted] = useDarkMode();
-  const themeMode = theme === "light" ? lightTheme : darkTheme;
-
-  if (!componentMounted) {
-    return <div />;
-  }
-
   return (
     <div className={`App ${libraryStatus ? "library-active" : ""}`}>
       <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
