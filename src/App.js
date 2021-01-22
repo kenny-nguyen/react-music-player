@@ -8,6 +8,13 @@ import Library from "./components/Library";
 import Nav from "./components/Nav";
 // import data
 import data from "./data";
+// darkmode-toggle tutorial
+// https://css-tricks.com/a-dark-mode-toggle-with-react-and-themeprovider/
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "./darkmode-toggle/theme";
+import { GlobalStyles } from "./darkmode-toggle/global";
+import Toggle from "./darkmode-toggle/Toggle";
+import { useDarkMode } from "./darkmode-toggle/useDarkMode";
 
 function App() {
   // Ref - used to grab references to DOMs in React.
@@ -40,6 +47,13 @@ function App() {
     }
   };
 
+  const [theme, toggleTheme, componentMounted] = useDarkMode();
+  const themeMode = theme === "light" ? lightTheme : darkTheme;
+
+  if (!componentMounted) {
+    return <div />;
+  }
+
   return (
     <div className={`App ${libraryStatus ? "library-active" : ""}`}>
       <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
@@ -70,6 +84,17 @@ function App() {
         src={currentSong.audio}
         onEnded={songEndHandler}
       ></audio>
+      <span>Credits:</span>
+      <small>
+        <b>Sun</b> icon made by{" "}
+        <a href="https://www.flaticon.com/authors/smalllikeart">smalllikeart</a>{" "}
+        from <a href="https://www.flaticon.com">www.flaticon.com</a>
+      </small>
+      <small>
+        <b>Moon</b> icon made by{" "}
+        <a href="https://www.freepik.com/home">Freepik</a> from{" "}
+        <a href="https://www.flaticon.com">www.flaticon.com</a>
+      </small>
     </div>
   );
 }
